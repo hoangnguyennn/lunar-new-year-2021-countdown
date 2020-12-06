@@ -24,10 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let seconds = secondsDiff / ONE_SEC
 
-    document.querySelector('.days > .box').innerHTML = days
-    document.querySelector('.hours > .box').innerHTML = hours
-    document.querySelector('.minutes > .box').innerHTML = minutes
-    document.querySelector('.seconds > .box').innerHTML = seconds
+    document.querySelector('.days > .box').innerHTML = to2Number(days)
+    document.querySelector('.hours > .box').innerHTML = to2Number(hours)
+    document.querySelector('.minutes > .box').innerHTML = to2Number(minutes)
+    document.querySelector('.seconds > .box').innerHTML = to2Number(seconds)
+  }
+
+  function to2Number(number) {
+    return number < 10 ? `0${number}` : `${number}`
   }
 
   setInterval(calculateAndSetTime, 1)
